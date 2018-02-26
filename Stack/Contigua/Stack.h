@@ -1,7 +1,10 @@
 #include <iostream>
 #include <array>
 
-using namespace std;
+using std::array;
+using std::cout;
+using std::cin;
+using std::endl;
 
 struct Stack {
 	array <int, 10> mystack;
