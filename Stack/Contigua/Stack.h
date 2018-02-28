@@ -12,9 +12,7 @@ struct Stack {
 };
 
 void Push(Stack &, int);
-void Pop (Stack &, int &);
-void Top (Stack, int &);
-void CoutStack (Stack &);
+bool Pop (Stack &, int &);
 
 void Push (Stack &s, int a)
 {
@@ -22,34 +20,15 @@ void Push (Stack &s, int a)
 	s.i++;
 }
 
-void CoutStack (Stack &s)
-{
-	if (s.i != 0)
-		for (int j = 0 ; j < s.i ; j++)
-			cout << s.mystack.at(j) << " ";
-	
-	else
-		cout << "No hay valores en stack";
-	cout << endl;
-}
-
-void Pop(Stack &s, int &a)
+bool Pop (Stack &s, int &a)
 {
 	if (s.i != 0)
 	{
 		s.i--;
 		a = s.mystack.at(s.i);
+		return true;
 	}
-	
-	else
-		cout << "Empty stack, Pop function cancelled";
-}
-
-void Top(Stack s, int &a)
-{
-	if (s.i != 0)
-		a = s.mystack.at(s.i-1);
 
 	else
-		cout << "Empty stack, Top function cancelled";
+		return false;
 }
