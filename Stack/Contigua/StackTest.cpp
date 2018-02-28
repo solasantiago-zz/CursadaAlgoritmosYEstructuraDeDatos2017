@@ -1,34 +1,31 @@
-#include "stack.h"
+#include "Stack.h"
+#include <cassert>
+
+void PushOddDigits (Stack &);
 
 int main ()
 {
-	int a;
-	Stack s;
-	
-	cout << "< CoutStack para mostrar stack vacio >" << endl;
-	CoutStack (s);
-	
-	//	Funcionamiento de Push
-	cout << endl << "< Ingresar 5 valores enteros para pushear al stack >" << endl;
-	for (int i = 0 ; i < 5 ; i++)
+	int Digit;
+	Stack OddDigits;
+	assert ( !Pop (OddDigits, Digit) );
+	PushOddDigits (OddDigits);
+	Pop(OddDigits, Digit);
+	assert ( Digit == 9 );
+	Pop(OddDigits, Digit);
+	assert ( Digit == 7 );
+	Pop(OddDigits, Digit);
+	assert ( Digit == 5 );
+	Pop(OddDigits, Digit);
+	assert ( Digit == 3 );
+	Pop(OddDigits, Digit);
+	assert ( Digit == 1 );
+	cout << "Test completed successfully";
+}
+
+void PushOddDigits (Stack &OddDigits)
+{
+	for (int i=1; i<10; i=i+2)
 	{
-		cin >> a;
-		Push(s, a);
-	}
-	
-	cout << endl << "< CoutStack para mostrar valores ingresados al stack >" << endl;
-	CoutStack (s);
-	//	Funcionamiento de Top
-	cout << endl << "< Uso de la funcion Top >" << endl;
-	Top (s, a);
-	cout << "Valor retornado: " << a << endl;
-	
-	//	Funcionamiento de Pop
-	cout << endl << "< Uso de la funcion Pop >" << endl;
-	for (int i = 0 ; i < 5 ; i++)
-	{
-		Pop(s, a);
-		cout << "Valor retornado: " << a << ". Valores de stack: ";
-		CoutStack (s);
+		Push(OddDigits, i);
 	}
 }
