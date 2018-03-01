@@ -1,14 +1,11 @@
-#include <iostream>
-#include <cstdlib>
+#include <array>
 
-using namespace std;
+using std::array;
 
-int main () {
-	int input=0;
-	while (input < 381)
-	{
-		srand (input);
-		input += (rand()%19)+1;
-		cout << input << endl;
-	}
-}
+struct Stack {
+	array <int, 100> mystack;
+	int i=0;
+};
+
+void Push(Stack &, int);
+bool Pop (Stack &, int &);
