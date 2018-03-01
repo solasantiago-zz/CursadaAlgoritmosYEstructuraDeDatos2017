@@ -1,6 +1,8 @@
 #include "Stack.h"
 #include <cassert>
 
+//	Pushear los 5 digitos impares. Luego popearlos.
+
 void PushOddDigits (Stack &);
 
 int main ()
