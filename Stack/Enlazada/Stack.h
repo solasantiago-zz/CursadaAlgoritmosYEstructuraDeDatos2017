@@ -1,5 +1,4 @@
 #include <iostream>
-#include <array>
 
 using std::cout;
 using std::cin;
