@@ -47,8 +47,8 @@ void GenerateKeys(Stack &BeadleshipBox)
 
 void CheckUpload (Stack &Floor, int Check)
 {
-	int Key;
-	while (Pop (Floor, Key))
-		assert ( Check == Key/100 );
+	int a;
+	while (Pop (Floor, a))
+		assert ( Check == a/100 );
 	cout << "Upload checked successfully" << endl;
 }
