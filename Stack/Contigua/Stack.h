@@ -1,18 +1,8 @@
 #include <iostream>
-#include <array>
 
-using std::array;
 using std::cout;
 using std::cin;
 using std::endl;
-
-struct Stack {
-	array <int, 10> mystack;
-	int i=0;
-};
-
-void Push(Stack &, int);
-bool Pop (Stack &, int &);
 
 void Push (Stack &s, int a)
 {
