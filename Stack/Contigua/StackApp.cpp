@@ -1,5 +1,4 @@
 #include "Stack.h"
-#include "StackContigua.cpp"
 #include <cassert>
 #include <cstdlib>
 
