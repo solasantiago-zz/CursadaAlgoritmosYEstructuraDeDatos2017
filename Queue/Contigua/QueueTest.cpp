@@ -8,7 +8,7 @@ void EnqueueAllDigits (Queue &);
 int main ()
 {
 	int Digit;
-	Stack AllDigits;
+	Queue AllDigits;
 	assert ( !Dequeue (AllDigits, Digit) );
 	EnqueueAllDigits (AllDigits);
 	Dequeue(AllDigits, Digit);
