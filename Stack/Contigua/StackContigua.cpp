@@ -1,9 +1,5 @@
 #include "Stack.h"
 
-using std::cout;
-using std::cin;
-using std::endl;
-
 void Push (Stack &s, int a)
 {
 	s.mystack.at(s.i) = a;
