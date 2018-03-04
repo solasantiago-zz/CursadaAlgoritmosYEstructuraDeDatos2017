@@ -1,27 +1,55 @@
 #include "Queue.h"
-#include <cstdlib>
 
-//	En la fila de una farmacia, los usuarios de una obra social usan su numero de identificacion
-//	para reservar un turno y ser atendidos al otro dia.
-//	Ordenar y mostrar en pantalla la cola por orden de llegada.
+using std::cout;
+using std::cin;
+using std::endl;
 
-void GeneratePeople(Queue &);
+void Enqueue (Queue &s, int a)
+{
+	if ( s.i < s,j and s.j!=100 )	//	El indicador de inicio está por delante del indicador de final
+	{
+		s.myqueue.at(s.j) = a;
+		s.j++;
+	}
+	
+	else if ( s.i-s.j < 0 )
+	{
+		s.myqueue.at(s.j) = a;
+		s.j++;
+	}
+	
+	else if (s.j==100)
+	{
+		s.myqueue.at(0) = a;
+		s.j=1;
+	}
 
-int main () {
-	int SocialWork;
-	Queue WaitingList;
-	GeneratePeople (WaitingList);
-	while ( Dequeue(WaitingList, SocialWork) )
-		cout << SocialWork << endl;
+	else			//	El indicador de inicio está por delante del indicador de final
+	{
+		cout << "Error";
+	}
 }
 
-void GeneratePeople (Queue &WaitingList)
+bool Dequeue (Queue &s, int &a)
 {
-	int input=1;
-	while (input < 400)
+	if (s.i < s.j)
 	{
-		srand (input);
-		input += (rand()%30)+1;
-		Enqueue (WaitingList, input);
+		a = s.myqueue.at(s.i);
+		s.i++;
+		return true;
 	}
+
+	else if (s.j < s.i and s.i-s.j < 0)
+	{
+		a = s.myqueue.at(s.i);
+		s.i++;
+	}
+	
+	else if (s.i==100)
+	{
+		s.myqueue.at(0) = a;
+		s.i=1;
+	}
+	else
+		return false;
 }
