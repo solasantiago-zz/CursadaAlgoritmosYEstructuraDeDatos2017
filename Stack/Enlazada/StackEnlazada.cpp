@@ -1,8 +1,5 @@
 #include "Stack.h"
 
-void Push(Stack &, int);
-bool Pop (Stack &, int &);
-
 using std::cout;
 using std::cin;
 using std::endl;
