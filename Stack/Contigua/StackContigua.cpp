@@ -1,11 +1,24 @@
-#include <array>
+#include "Stack.h"
 
-using std::array;
+using std::cout;
+using std::cin;
+using std::endl;
 
-struct Stack {
-	array <int, 100> mystack;
-	int i=0;
-};
+void Push (Stack &s, int a)
+{
+	s.mystack.at(s.i) = a;
+	s.i++;
+}
 
-void Push(Stack &, int);
-bool Pop (Stack &, int &);
+bool Pop (Stack &s, int &a)
+{
+	if (s.i != 0)
+	{
+		s.i--;
+		a = s.mystack.at(s.i);
+		return true;
+	}
+
+	else
+		return false;
+}
