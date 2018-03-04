@@ -1,4 +1,5 @@
 #include "Stack.h"
+#include "StackContigua.cpp"
 #include <cassert>
 
 //	Pushear los 5 digitos impares. Luego popearlos.
