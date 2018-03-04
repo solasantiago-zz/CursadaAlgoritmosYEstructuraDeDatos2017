@@ -3,6 +3,9 @@
 
 #include <iostream>
 
+void Push(Stack &, int);
+bool Pop (Stack &, int &);
+
 struct Node {
 	int Value;
 	Node *Next = nullptr;
