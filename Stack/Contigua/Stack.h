@@ -1,24 +1,19 @@
+#ifndef STACK_H
+#define STACK_H
+
+#include <array>
 #include <iostream>
 
-using std::cout;
-using std::cin;
-using std::endl;
+const int N = 100;
 
-void Push (Stack &s, int a)
-{
-	s.mystack.at(s.i) = a;
-	s.i++;
-}
+using std::array;
 
-bool Pop (Stack &s, int &a)
-{
-	if (s.i != 0)
-	{
-		s.i--;
-		a = s.mystack.at(s.i);
-		return true;
-	}
+struct Stack {
+	array <int, N> mystack;
+	int i=0;
+};
 
-	else
-		return false;
-}
+void Push(Stack &, int);
+bool Pop (Stack &, int &);
+
+#endif
