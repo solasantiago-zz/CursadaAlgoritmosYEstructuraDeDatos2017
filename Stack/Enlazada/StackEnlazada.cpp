@@ -1,47 +1,22 @@
 #include "Stack.h"
 
-using std::cout;
-
 void Push (Stack &s, int a)
 {
-	if (s.FirstNode != nullptr)
-	{
-		Node *aux = s.FirstNode;
-		while (aux->Next != nullptr)
-			aux = aux->Next;
-		aux->Next = new Node;
-		aux->Next->Value = a;
-	}
-
-	else
-	{
-		s.FirstNode = new Node;
-		s.FirstNode->Value = a;
-	}	
+	Node *input = new Node;
+	input->Value = a;
+	input->Next = s.Top;
+	s.Top = input;
 }
 
 bool Pop (Stack &s, int &a)
 {
-	if (s.FirstNode != nullptr)
+	if (s.Top != nullptr)
 	{
-		if (s.FirstNode->Next != nullptr)
-		{
-			Node *aux = s.FirstNode;
-			while (aux->Next->Next != nullptr)
-				aux = aux->Next;
-			a = aux->Next->Value;
-			aux->Next = nullptr;
-		}
-		
-		else
-		{
-			a = s.FirstNode->Value;
-			s.FirstNode = nullptr;
-		}
-		
+		a = s.Top->Value;
+		s.Top = s.Top->Next;
 		return true;
 	}
-
+	
 	else
 		return false;
 }
