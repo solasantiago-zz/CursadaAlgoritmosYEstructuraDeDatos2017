@@ -1,6 +1,7 @@
 #include "Queue.h"
 
 using std::cout;
+using std::endl;
 
 void Enqueue (Queue &s, int a)
 {
