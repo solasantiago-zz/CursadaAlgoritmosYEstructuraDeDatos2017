@@ -1,35 +1,25 @@
 #include "Queue.h"
 
-using std::cout;
-using std::endl;
-
 void Enqueue (Queue &s, int a)
 {
-	if (s.FirstNode != nullptr)
-	{
-		Node *aux = s.FirstNode;
-		while (aux->Next != nullptr)
-			aux = aux->Next;
-		aux->Next = new Node;
-		aux->Next->Value = a;
-	}
-
-	else
-	{
-		s.FirstNode = new Node;
-		s.FirstNode->Value = a;
-	}	
+	Node *input = new Node;
+	input->Value = a;
+	if (s.Top != nullptr)
+		s.Top->Next = input;
+	s.Top = input;
+	if (s.Bottom == nullptr)
+		s.Bottom = input;
 }
 
 bool Dequeue (Queue &s, int &a)
 {
-	if (s.FirstNode != nullptr)
+	if (s.Bottom != nullptr)
 	{
-		a = s.FirstNode->Value;
-		s.FirstNode = s.FirstNode->Next;
+		a = s.Bottom->Value;
+		s.Bottom = s.Bottom->Next;
 		return true;
 	}
-
+		
 	else
 		return false;
 }
