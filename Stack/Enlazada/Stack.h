@@ -3,8 +3,8 @@
 
 #include <iostream>
 
-void Push(Stack &, int);
-bool Pop (Stack &, int &);
+using std::cout;
+using std::endl;
 
 struct Node {
 	int Value;
@@ -12,7 +12,10 @@ struct Node {
 };
 	
 struct Stack {
-	Node *FirstNode= nullptr;
+	Node *Top= nullptr;
 };
+
+void Push(Stack &, int);
+bool Pop (Stack &, int &);
 
 #endif
