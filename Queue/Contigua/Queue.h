@@ -10,7 +10,7 @@ using std::array;
 
 struct Queue {
 	array <int, N> myqueue;
-	int i=0, j=0, M=0;
+	int i=0, j=0;
 };
 
 void Enqueue (Queue &, int);
